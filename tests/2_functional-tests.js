@@ -5,6 +5,10 @@ const server = require('../server');
 
 chai.use(chaiHttp);
 
-suite('Functional Tests', function() {
+// https://www.chaijs.com/plugins/chai-http/ - chai-http documentation
+
+// test functional tests on playground. 
+
+suite('Functional Tests', function () {
 
 });
