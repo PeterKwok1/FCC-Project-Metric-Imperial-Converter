@@ -36,14 +36,37 @@ suite('Unit Tests', function () {
         })
     })
 
-    suite('getReturnNut', () => {
-        test('Return converted unit', () => {
-            assert.equal(convertHandler.getReturnUnit('kg'), 'lbs', 'Did not return converted unit')
+    suite('getReturnUnit', () => {
+        test('Return new unit', () => {
+            assert.equal(convertHandler.getReturnUnit('kg'), 'lbs', 'Did not return new unit')
         })
     })
 
     suite('spellOutUnit', () => {
-        test('Return spelled out unit')
+        test('Return spelled out unit', () => {
+            assert.equal(convertHandler.spellOutUnit('km'), 'kilometers', 'Did not return spelled out unit')
+        })
+    })
+
+    suite('convert', () => {
+        test('convert gal to L', () => {
+            assert.equal(convertHandler.convert(1, 'gal'), 3.78541, 'Did not convert gal to L' )
+        })
+        test('convert L to gal', () => {
+            assert.equal(convertHandler.convert(1, 'L'), 0.26417, 'Did not convert L to gal' )
+        })
+        test('convert mi to km', () => {
+            assert.equal(convertHandler.convert(1, 'mi'), 1.60934, 'Did not convert mi to km' )
+        })
+        test('convert km to mi', () => {
+            assert.equal(convertHandler.convert(1, 'km'), 0.62137, 'Did not convert km to mi' )
+        })
+        test('convert lbs to kg', () => {
+            assert.equal(convertHandler.convert(1, 'lbs'), 0.45359, 'Did not convert lbs to kg' )
+        })
+        test('convert kg to lbs', () => {
+            assert.equal(convertHandler.convert(1, 'kg'), 2.20462, 'Did not convert kg to lbs' )
+        })
     })
 });
 

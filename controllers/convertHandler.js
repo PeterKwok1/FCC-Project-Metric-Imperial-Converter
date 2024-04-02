@@ -35,24 +35,37 @@ function ConvertHandler() {
   };
 
   this.spellOutUnit = function (unit) { // gets non abbreviated unit
-    let result;
+    const key = { mi: 'miles', km: 'kilometers', gal: 'gallons', L: 'liters', lbs: 'pounds', kg: 'kilograms' }
 
-    return result;
+    return key[unit];
   };
 
   this.convert = function (initNum, initUnit) { // gets new number
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    let result;
 
-    return result;
+    let converted
+
+    if (initUnit === 'gal') {
+      converted = initNum * galToL
+    } else if (initUnit === 'L') {
+      converted = initNum / galToL
+    } else if (initUnit === 'lbs') {
+      converted = initNum * lbsToKg
+    } else if (initUnit === 'kg') {
+      converted = initNum / lbsToKg
+    } else if (initUnit === 'mi') {
+      converted = initNum * miToKm
+    } else if (initUnit === 'km') {
+      converted = initNum / miToKm
+    }
+
+    return Math.round(converted * 100000) / 100000
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) { // puts string together 
-    let result;
-
-    return result;
+    return `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
   };
 
 }
