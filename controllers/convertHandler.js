@@ -6,10 +6,13 @@ function ConvertHandler() {
     if (numStr === '') {
       return 1
     } else if (numStr.includes('/')) {
+      if (numStr.match(/\//g).length > 1) {
+        return new Error('Invalid number')
+      }
       const numStrArr = numStr.split('/')
       return (Number(numStrArr[0]) / Number(numStrArr[1]))
     } else {
-      return Number(numStr);
+      return Number(numStr)
     }
   };
 
@@ -19,16 +22,16 @@ function ConvertHandler() {
     const lowerCase = input.match(regex)[0].toLowerCase()
     const unit = lowerCase === 'l' ? 'L' : lowerCase
     if (valid.includes(unit)) {
-      return unit;
+      return unit
     } else {
       return new Error('Invalid unit')
     }
   };
 
   this.getReturnUnit = function (initUnit) { // gets new unit
-    let result;
+    const key = { mi: 'km', lbs: 'kg', gal: 'L', km: 'mi', kg: 'lbs', L: 'gal' }
 
-    return result;
+    return key[initUnit]
   };
 
   this.spellOutUnit = function (unit) { // gets non abbreviated unit

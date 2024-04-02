@@ -19,6 +19,9 @@ suite('Unit Tests', function () {
         test('Read a fractional decimal number input', () => {
             assert.equal(convertHandler.getNum('1.5/2'), 0.75, 'Can\'t read fractional decimal')
         })
+        test('Return an error on double fraction input', () => [
+            assert.instanceOf(convertHandler.getNum('8/2/2'), Error, 'Did not return error on double fraction input')
+        ])
         test('Return 1 when no number is input', () => {
             assert.equal(convertHandler.getNum('kg'), 1, 'Not 1 when no number is input')
         })
@@ -31,6 +34,16 @@ suite('Unit Tests', function () {
         test('Throw error for invalid unit', () => {
             assert.instanceOf(convertHandler.getUnit('gk'), Error, 'Did not throw error for invalid unit') // obj's in js are not =
         })
+    })
+
+    suite('getReturnNut', () => {
+        test('Return converted unit', () => {
+            assert.equal(convertHandler.getReturnUnit('kg'), 'lbs', 'Did not return converted unit')
+        })
+    })
+
+    suite('spellOutUnit', () => {
+        test('Return spelled out unit')
     })
 });
 
