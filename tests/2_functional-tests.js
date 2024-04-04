@@ -9,6 +9,14 @@ chai.use(chaiHttp);
 
 // test functional tests on playground. 
 
-suite('Functional Tests', function () {
+// use landon tutorial
 
+suite('Functional Tests', function () {
+    test('test chaiHTTP', (done) => {
+        chai.request(server).get('/test')
+            .end((err, res) => {
+                assert.equal(res, 'works', 'response != works')
+                done()
+            })
+    })
 });

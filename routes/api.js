@@ -7,6 +7,8 @@ module.exports = function (app) {
 
   let convertHandler = new ConvertHandler();
 
-
+  app.route('/test').get((req, res) => {
+    res.send('works')
+  })
 
 };
