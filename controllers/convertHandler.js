@@ -4,13 +4,13 @@ function ConvertHandler() {
     const numStr = input.replace(regex, '') || '1'
     const numStrArr = numStr.split('/')
     if (numStrArr.length > 2) {
-      return new Error('Invalid number')
+      return new Error('invalid number')
     }
     const numerator = Number(numStrArr[0])
     const denominator = numStrArr[1] === undefined ? 1
       : Number(numStrArr[1])
     if (isNaN(numerator) || isNaN(denominator)) {
-      return new Error('Invalid number')
+      return new Error('invalid number')
     }
 
     return (numerator / denominator)
@@ -24,7 +24,7 @@ function ConvertHandler() {
     if (valid.includes(unit)) {
       return unit
     } else {
-      return new Error('Invalid unit')
+      return new Error('invalid unit')
     }
   };
 
@@ -65,7 +65,7 @@ function ConvertHandler() {
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) { // puts string together 
-    return `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
+    return `${initNum} ${this.spellOutUnit(initUnit)} converts to ${returnNum} ${this.spellOutUnit(returnUnit)}`;
   };
 
 }
