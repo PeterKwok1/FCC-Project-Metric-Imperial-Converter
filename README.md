@@ -4,5 +4,4 @@ This is the boilerplate for the Metric-Imperial Converter project. Instructions 
 
 # Used
 https://www.chaijs.com/plugins/chai-http/ - chai-http documentation
-https://youtu.be/a-ZaRixBhQI?list=PLs1A1mpzBj5B5ToMqbhNeli4J_6O4kMld - tutorial
-
+https://youtu.be/a-ZaRixBhQI?list=PLs1A1mpzBj5B5ToMqbhNeli4J_6O4kMld&t=752 - tutorial

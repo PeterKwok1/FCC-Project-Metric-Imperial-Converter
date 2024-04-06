@@ -1,19 +1,19 @@
 function ConvertHandler() {
-
   this.getNum = function (input) {
     const regex = /[a-z]+$/i
-    const numStr = input.replace(regex, '')
-    if (numStr === '') {
-      return 1
-    } else if (numStr.includes('/')) {
-      if (numStr.match(/\//g).length > 1) {
-        return new Error('Invalid number')
-      }
-      const numStrArr = numStr.split('/')
-      return (Number(numStrArr[0]) / Number(numStrArr[1]))
-    } else {
-      return Number(numStr)
+    const numStr = input.replace(regex, '') || '1'
+    const numStrArr = numStr.split('/')
+    if (numStrArr.length > 2) {
+      return new Error('Invalid number')
     }
+    const numerator = Number(numStrArr[0])
+    const denominator = numStrArr[1] === undefined ? 1
+      : Number(numStrArr[1])
+    if (isNaN(numerator) || isNaN(denominator)) {
+      return new Error('Invalid number')
+    }
+
+    return (numerator / denominator)
   };
 
   this.getUnit = function (input) {
