@@ -23,8 +23,14 @@ module.exports = function (app) {
       const returnNum = convertHandler.convert(initNum, initUnit)
       const returnUnit = convertHandler.getReturnUnit(initUnit)
       const toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit)
-      res.json({ initNum, returnNum, returnUnit, string: toString })
+      res.json({ initNum, initUnit, returnNum, returnUnit, string: toString })
     }
   })
 
+  app.route('/test').get((req, res) => {
+    res.send('this works')
+  })
+
 };
+
+

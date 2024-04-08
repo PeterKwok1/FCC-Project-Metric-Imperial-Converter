@@ -68,12 +68,6 @@ suite('Unit Tests', function () {
             assert.equal(convertHandler.convert(1, 'kg'), 2.20462, 'Did not convert kg to lbs' )
         })
     })
-
-    // suite('getString', () => {
-    //     test('return string', () => {
-    //         assert.equal(convertHandler.getString(4, 'lbs', 8, 'kg'), '4 pounds converts to 8 kilograms')
-    //     })
-    // })
 });
 
 // try {
