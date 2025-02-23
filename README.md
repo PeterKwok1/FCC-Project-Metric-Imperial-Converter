@@ -2,6 +2,6 @@
 
 This is the boilerplate for the Metric-Imperial Converter project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter
 
-# Used
-https://www.chaijs.com/plugins/chai-http/ - chai-http documentation
-https://youtu.be/a-ZaRixBhQI?list=PLs1A1mpzBj5B5ToMqbhNeli4J_6O4kMld - tutorial
+## Resources
+- https://www.chaijs.com/plugins/chai-http/ - chai-http docs
+- https://youtu.be/a-ZaRixBhQI?list=PLs1A1mpzBj5B5ToMqbhNeli4J_6O4kMld - tutorial
